@@ -2,15 +2,10 @@ services:
   - type: web
     name: eventai-pro
     runtime: python
+    plan: free
     buildCommand: ""
     startCommand: python server.py
     healthCheckPath: /login
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.14
-      - key: DATA_DIR
-        value: /opt/render/project/src/data
-    disk:
-      name: eventai-data
-      mountPath: /opt/render/project/src/data
-      sizeGB: 1

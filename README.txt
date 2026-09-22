@@ -66,6 +66,10 @@ Chạy:
 
 7. DEPLOY RENDER
 ----------------
-File `render.yaml` đã cấu hình Web Service, health check và persistent disk
-cho SQLite. Sau khi đẩy lên GitHub, tạo Blueprint trên Render và chọn repo.
-Render tự chạy `python server.py`; không cần cài thêm package ngoài.
+File `render.yaml` đã cấu hình Web Service Free và health check. Sau khi đẩy
+lên GitHub, tạo Blueprint trên Render và chọn repo. Render tự chạy
+`python server.py`; không cần cài thêm package ngoài.
+
+Lưu ý gói Free không hỗ trợ persistent disk. Vì hệ thống dùng SQLite, dữ liệu
+demo có thể bị reset khi Render triển khai lại, khởi động lại hoặc dịch vụ ngủ.
+Không dùng hệ thống này để lưu dữ liệu thật trên gói Free.
